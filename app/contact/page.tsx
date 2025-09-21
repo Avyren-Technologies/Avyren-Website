@@ -6,7 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ArrowRight, Mail, Phone, MapPin, Clock, MessageSquare, Users, Zap } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
+import { ArrowRight, Mail, Phone, MapPin, Clock, MessageSquare, Calendar } from "lucide-react"
 import Link from "next/link"
 
 export default function ContactPage() {
@@ -25,8 +26,8 @@ export default function ContactPage() {
               Let's Start Your <span className="text-primary">Digital Transformation</span> Journey
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              Ready to transform your business? Our team of experts is here to help you navigate your digital
-              transformation journey and achieve your goals.
+              Ready to transform your business with smart digital solutions? Our team of experts is here to help you 
+              navigate your journey and achieve your goals.
             </p>
             <Button size="lg" asChild>
               <Link href="#contact-form">Get Started Today</Link>
@@ -53,7 +54,7 @@ export default function ContactPage() {
                 </div>
                 <CardTitle className="font-heading text-xl mb-4">General Inquiry</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  Have questions about our services or want to learn more about how we can help your business?
+                  Have questions about our products or want to learn more about how we can help your business?
                 </CardDescription>
                 <Button variant="outline" asChild className="w-fit bg-transparent">
                   <Link href="#contact-form">
@@ -66,14 +67,14 @@ export default function ContactPage() {
             <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/20">
               <CardHeader>
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Zap className="h-8 w-8 text-accent" />
+                  <Calendar className="h-8 w-8 text-accent" />
                 </div>
-                <CardTitle className="font-heading text-xl mb-4">Schedule a Demo</CardTitle>
+                <CardTitle className="font-heading text-xl mb-4">Request Demo</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  See our platform in action and discover how it can transform your business operations.
+                  See our products in action and discover how they can transform your business operations.
                 </CardDescription>
                 <Button variant="outline" asChild className="w-fit bg-transparent">
-                  <Link href="/demo">
+                  <Link href="#contact-form">
                     Book Demo <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -83,15 +84,15 @@ export default function ContactPage() {
             <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/20">
               <CardHeader>
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-8 w-8 text-secondary" />
+                  <Phone className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="font-heading text-xl mb-4">Enterprise Sales</CardTitle>
+                <CardTitle className="font-heading text-xl mb-4">Custom Solutions</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  Looking for enterprise solutions? Connect with our sales team for custom pricing and features.
+                  Need a custom solution? Connect with our development team for tailored software development.
                 </CardDescription>
                 <Button variant="outline" asChild className="w-fit bg-transparent">
-                  <Link href="mailto:sales@tecosoft.com">
-                    Contact Sales <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="#contact-form">
+                    Get Quote <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardHeader>
@@ -110,57 +111,70 @@ export default function ContactPage() {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
-                      First Name *
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      Full Name *
                     </label>
-                    <Input id="firstName" placeholder="John" required />
+                    <Input id="name" placeholder="John Doe" required />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
-                      Last Name *
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      Company Name *
                     </label>
-                    <Input id="lastName" placeholder="Doe" required />
+                    <Input id="company" placeholder="Your Company" required />
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address *
-                  </label>
-                  <Input id="email" type="email" placeholder="john@company.com" required />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Email Address *
+                    </label>
+                    <Input id="email" type="email" placeholder="john@company.com" required />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      Phone Number *
+                    </label>
+                    <Input id="phone" type="tel" placeholder="+91 98765 43210" required />
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                    Company Name
-                  </label>
-                  <Input id="company" placeholder="Your Company" />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Phone Number
-                  </label>
-                  <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" />
-                </div>
-
-                <div>
-                  <label htmlFor="inquiry" className="block text-sm font-medium text-foreground mb-2">
-                    Inquiry Type *
-                  </label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="general">General Information</SelectItem>
-                      <SelectItem value="demo">Request Demo</SelectItem>
-                      <SelectItem value="pricing">Pricing & Plans</SelectItem>
-                      <SelectItem value="technical">Technical Support</SelectItem>
-                      <SelectItem value="partnership">Partnership Opportunities</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="industry" className="block text-sm font-medium text-foreground mb-2">
+                      Industry *
+                    </label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select your industry" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="construction">Construction</SelectItem>
+                        <SelectItem value="healthcare">Healthcare</SelectItem>
+                        <SelectItem value="retail">Retail</SelectItem>
+                        <SelectItem value="education">Education</SelectItem>
+                        <SelectItem value="manufacturing">Manufacturing</SelectItem>
+                        <SelectItem value="services">Professional Services</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <label htmlFor="product" className="block text-sm font-medium text-foreground mb-2">
+                      Product of Interest *
+                    </label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select product" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="avy-tracker">Avy Tracker</SelectItem>
+                        <SelectItem value="ecommerce-booking">E-commerce & Service Booking</SelectItem>
+                        <SelectItem value="custom-solutions">Custom Solutions</SelectItem>
+                        <SelectItem value="consultation">General Consultation</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
                 <div>
@@ -173,6 +187,21 @@ export default function ContactPage() {
                     rows={6}
                     required
                   />
+                </div>
+
+                <div>
+                  <label htmlFor="demo-time" className="block text-sm font-medium text-foreground mb-2">
+                    Preferred Demo Time (Optional)
+                  </label>
+                  <Input id="demo-time" type="datetime-local" />
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="consent" required />
+                  <label htmlFor="consent" className="text-sm text-muted-foreground cursor-pointer">
+                    I agree to receive communications from Avyren Technologies and understand I can unsubscribe at
+                    any time. *
+                  </label>
                 </div>
 
                 <Button size="lg" className="w-full">
@@ -194,8 +223,8 @@ export default function ContactPage() {
                     <p className="text-muted-foreground mb-2">
                       Send us an email and we'll get back to you within 24 hours.
                     </p>
-                    <Link href="mailto:hello@tecosoft.com" className="text-primary hover:underline">
-                      hello@tecosoft.com
+                    <Link href="mailto:info@avyrentechnologies.com" className="text-primary hover:underline">
+                      info@avyrentechnologies.com
                     </Link>
                   </div>
                 </div>
@@ -207,8 +236,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading font-semibold text-lg mb-2">Call Us</h3>
                     <p className="text-muted-foreground mb-2">Speak directly with our team during business hours.</p>
-                    <Link href="tel:+1-555-123-4567" className="text-primary hover:underline">
-                      +1 (555) 123-4567
+                    <Link href="tel:+91-98765-43210" className="text-primary hover:underline">
+                      +91 98765 43210
                     </Link>
                   </div>
                 </div>
@@ -219,13 +248,13 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold text-lg mb-2">Visit Us</h3>
-                    <p className="text-muted-foreground mb-2">Come visit our headquarters for an in-person meeting.</p>
+                    <p className="text-muted-foreground mb-2">Come visit our office for an in-person meeting.</p>
                     <address className="text-primary not-italic">
-                      123 Innovation Drive
+                      [Office Address]
                       <br />
-                      Tech District, CA 94105
+                      [City, State - PIN Code]
                       <br />
-                      United States
+                      India
                     </address>
                   </div>
                 </div>
@@ -237,8 +266,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading font-semibold text-lg mb-2">Business Hours</h3>
                     <div className="text-muted-foreground space-y-1">
-                      <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
-                      <p>Saturday: 10:00 AM - 4:00 PM PST</p>
+                      <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                      <p>Saturday: 10:00 AM - 4:00 PM IST</p>
                       <p>Sunday: Closed</p>
                     </div>
                   </div>
@@ -250,32 +279,32 @@ export default function ContactPage() {
                 <h3 className="font-heading font-semibold text-lg mb-4">Quick Links</h3>
                 <div className="space-y-3">
                   <Link
-                    href="/demo"
+                    href="/products/avy-tracker"
                     className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                   >
                     <ArrowRight className="h-4 w-4 mr-2" />
-                    Schedule a Demo
+                    Avy Tracker Demo
                   </Link>
                   <Link
-                    href="/pricing"
+                    href="/products/ecommerce-booking"
                     className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                   >
                     <ArrowRight className="h-4 w-4 mr-2" />
-                    View Pricing Plans
+                    E-commerce Platform Demo
                   </Link>
                   <Link
-                    href="/resources"
+                    href="/products/custom-solutions"
                     className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                   >
                     <ArrowRight className="h-4 w-4 mr-2" />
-                    Browse Resources
+                    Custom Development
                   </Link>
                   <Link
-                    href="/support"
+                    href="/about"
                     className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                   >
                     <ArrowRight className="h-4 w-4 mr-2" />
-                    Support Center
+                    About Avyren Technologies
                   </Link>
                 </div>
               </div>
@@ -298,33 +327,32 @@ export default function ContactPage() {
             <Card className="p-8">
               <h3 className="font-heading font-semibold text-xl mb-4">How quickly can we get started?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We can typically begin your digital transformation project within 1-2 weeks of our initial consultation.
-                The timeline depends on the complexity of your requirements and current systems.
+                We can typically begin your project within 1-2 weeks of our initial consultation. For our ready-to-deploy 
+                products like Avy Tracker, implementation can start immediately after the demo and requirements discussion.
               </p>
             </Card>
 
             <Card className="p-8">
               <h3 className="font-heading font-semibold text-xl mb-4">Do you offer custom solutions?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Yes, we specialize in creating custom digital solutions tailored to your specific business needs. Our
-                team works closely with you to understand your requirements and develop the perfect solution.
+                Yes, we specialize in creating custom digital solutions tailored to your specific business needs. 
+                Our team provides complete SDLC support from requirement analysis to deployment and ongoing maintenance.
               </p>
             </Card>
 
             <Card className="p-8">
               <h3 className="font-heading font-semibold text-xl mb-4">What industries do you serve?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We serve a wide range of industries including manufacturing, healthcare, finance, retail, and logistics.
-                Our solutions are designed to be flexible and adaptable to various business models and requirements.
+                We serve a wide range of industries including construction, healthcare, retail, education, manufacturing, 
+                and professional services. Our solutions are designed to be flexible and adaptable to various business models.
               </p>
             </Card>
 
             <Card className="p-8">
               <h3 className="font-heading font-semibold text-xl mb-4">What kind of support do you provide?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We provide comprehensive support including implementation assistance, training, ongoing technical
-                support, and strategic consulting. Our support levels vary by plan, with 24/7 support available for
-                enterprise customers.
+                We provide comprehensive support including implementation assistance, training, ongoing technical support, 
+                and feature updates. Our support varies by product and service level, with dedicated support available for enterprise customers.
               </p>
             </Card>
           </div>

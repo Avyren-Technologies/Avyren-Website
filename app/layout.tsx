@@ -17,30 +17,30 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Tecosoft Digital Solutions - Digital Transformation Experts",
+  title: "Avyren Technologies - Powering Smart Digital Solutions",
   description:
-    "Transform your business with cutting-edge digital solutions. We help companies modernize operations through innovative technology.",
+    "Affordable, scalable, and intelligent digital platforms for modern businesses. From workforce management to e-commerce solutions.",
   keywords:
-    "digital transformation, business automation, process optimization, enterprise solutions, technology consulting",
-  authors: [{ name: "Tecosoft Digital Solutions" }],
-  creator: "Tecosoft Digital Solutions",
-  publisher: "Tecosoft Digital Solutions",
+    "workforce management software, HRMS attendance app, e-commerce platform, service booking platform, affordable software solutions India, digital transformation",
+  authors: [{ name: "Avyren Technologies" }],
+  creator: "Avyren Technologies",
+  publisher: "Avyren Technologies",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://tecosoft.com",
-    title: "Tecosoft Digital Solutions - Digital Transformation Experts",
+    url: "https://avyrentechnologies.com",
+    title: "Avyren Technologies - Powering Smart Digital Solutions",
     description:
-      "Transform your business with cutting-edge digital solutions. We help companies modernize operations through innovative technology.",
-    siteName: "Tecosoft Digital Solutions",
+      "Affordable, scalable, and intelligent digital platforms for modern businesses. From workforce management to e-commerce solutions.",
+    siteName: "Avyren Technologies",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tecosoft Digital Solutions - Digital Transformation Experts",
+    title: "Avyren Technologies - Powering Smart Digital Solutions",
     description:
-      "Transform your business with cutting-edge digital solutions. We help companies modernize operations through innovative technology.",
-    creator: "@tecosoft",
+      "Affordable, scalable, and intelligent digital platforms for modern businesses. From workforce management to e-commerce solutions.",
+    creator: "@avyrentech",
   },
   generator: 'v0.app'
 }

@@ -41,27 +41,9 @@ export default function ResourcesPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <FileText className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="font-heading text-xl mb-4">White Papers & Reports</CardTitle>
-                <CardDescription className="text-base leading-relaxed mb-6">
-                  In-depth analysis of industry trends, best practices, and strategic insights to guide your digital
-                  transformation decisions.
-                </CardDescription>
-                <Button variant="outline" asChild className="w-fit bg-transparent">
-                  <Link href="/resources/whitepapers">
-                    Browse White Papers <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/20">
-              <CardHeader className="p-8">
-                <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <Users className="h-8 w-8 text-accent" />
-                </div>
                 <CardTitle className="font-heading text-xl mb-4">Case Studies</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  Real-world success stories showcasing how organizations have transformed their operations with our
+                  Real-world success stories showcasing how businesses have transformed their operations with our
                   digital solutions.
                 </CardDescription>
                 <Button variant="outline" asChild className="w-fit bg-transparent">
@@ -72,28 +54,10 @@ export default function ResourcesPage() {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/20">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/20">
               <CardHeader className="p-8">
-                <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                  <Video className="h-8 w-8 text-secondary" />
-                </div>
-                <CardTitle className="font-heading text-xl mb-4">Webinars & Videos</CardTitle>
-                <CardDescription className="text-base leading-relaxed mb-6">
-                  Educational content featuring expert insights, product demonstrations, and thought leadership on
-                  digital transformation topics.
-                </CardDescription>
-                <Button variant="outline" asChild className="w-fit bg-transparent">
-                  <Link href="/resources/webinars">
-                    Watch Webinars <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
-              <CardHeader className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <BookOpen className="h-8 w-8 text-primary" />
+                <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <BookOpen className="h-8 w-8 text-accent" />
                 </div>
                 <CardTitle className="font-heading text-xl mb-4">Implementation Guides</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
@@ -108,10 +72,27 @@ export default function ResourcesPage() {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/20">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/20">
               <CardHeader className="p-8">
-                <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <Download className="h-8 w-8 text-accent" />
+                <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
+                  <Video className="h-8 w-8 text-secondary" />
+                </div>
+                <CardTitle className="font-heading text-xl mb-4">Product Demos</CardTitle>
+                <CardDescription className="text-base leading-relaxed mb-6">
+                  Video demonstrations of our products featuring expert insights and real-world usage scenarios.
+                </CardDescription>
+                <Button variant="outline" asChild className="w-fit bg-transparent">
+                  <Link href="/resources/demos">
+                    Watch Demos <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardHeader>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+              <CardHeader className="p-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <Download className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-xl mb-4">Tools & Templates</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
@@ -126,19 +107,35 @@ export default function ResourcesPage() {
               </CardHeader>
             </Card>
 
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/20">
+              <CardHeader className="p-8">
+                <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <Users className="h-8 w-8 text-accent" />
+                </div>
+                <CardTitle className="font-heading text-xl mb-4">Industry Insights</CardTitle>
+                <CardDescription className="text-base leading-relaxed mb-6">
+                  Industry-specific insights and trends to help you understand how digital transformation applies to your sector.
+                </CardDescription>
+                <Button variant="outline" asChild className="w-fit bg-transparent">
+                  <Link href="/resources/insights">
+                    Read Insights <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardHeader>
+            </Card>
+
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/20">
               <CardHeader className="p-8">
                 <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
                   <Calendar className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="font-heading text-xl mb-4">Events & Training</CardTitle>
+                <CardTitle className="font-heading text-xl mb-4">Blog & Updates</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  Upcoming events, workshops, and training sessions to help you stay current with the latest digital
-                  transformation trends.
+                  Latest blog posts, company updates, and thought leadership articles on digital transformation topics.
                 </CardDescription>
                 <Button variant="outline" asChild className="w-fit bg-transparent">
-                  <Link href="/resources/events">
-                    View Events <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="/blog">
+                    Read Blog <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardHeader>
@@ -165,18 +162,18 @@ export default function ResourcesPage() {
                 </div>
                 <div className="flex-1">
                   <Badge variant="secondary" className="mb-2">
-                    White Paper
+                    Case Study
                   </Badge>
                   <h3 className="font-heading font-semibold text-xl mb-3">
-                    The Complete Guide to Digital Transformation in Manufacturing
+                    How TechCorp Improved Productivity by 40% with Avy Tracker
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    A comprehensive 40-page guide covering strategies, technologies, and best practices for modernizing
-                    manufacturing operations.
+                    Learn how a mid-size technology company transformed their workforce management and achieved significant 
+                    productivity gains in just 3 months.
                   </p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link href="/resources/manufacturing-guide">
-                      Download Free <Download className="ml-2 h-4 w-4" />
+                    <Link href="/resources/techcorp-case-study">
+                      Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
@@ -186,22 +183,22 @@ export default function ResourcesPage() {
             <Card className="p-8 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Users className="h-6 w-6 text-accent" />
+                  <BookOpen className="h-6 w-6 text-accent" />
                 </div>
                 <div className="flex-1">
                   <Badge variant="secondary" className="mb-2">
-                    Case Study
+                    Guide
                   </Badge>
                   <h3 className="font-heading font-semibold text-xl mb-3">
-                    How TechCorp Achieved 40% Efficiency Gains Through Automation
+                    The Complete Guide to Workforce Management
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Learn how a mid-size technology company transformed their operations and achieved significant cost
-                    savings in just 6 months.
+                    A comprehensive guide covering strategies, technologies, and best practices for modernizing 
+                    workforce management operations.
                   </p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link href="/resources/techcorp-case-study">
-                      Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link href="/resources/workforce-guide">
+                      Download Free <Download className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
@@ -215,18 +212,18 @@ export default function ResourcesPage() {
                 </div>
                 <div className="flex-1">
                   <Badge variant="secondary" className="mb-2">
-                    Webinar
+                    Demo
                   </Badge>
                   <h3 className="font-heading font-semibold text-xl mb-3">
-                    AI and Machine Learning in Business Operations
+                    E-commerce & Service Booking Platform Demo
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    A 60-minute expert panel discussion on practical applications of AI and ML in modern business
-                    operations and decision-making.
+                    A 15-minute walkthrough of our dual-platform solution showing how businesses can manage both 
+                    retail and service operations.
                   </p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link href="/resources/ai-webinar">
-                      Watch Now <Video className="ml-2 h-4 w-4" />
+                    <Link href="/resources/ecommerce-demo">
+                      Watch Demo <Video className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
@@ -243,10 +240,10 @@ export default function ResourcesPage() {
                     Tool
                   </Badge>
                   <h3 className="font-heading font-semibold text-xl mb-3">
-                    Digital Transformation Readiness Assessment
+                    Digital Readiness Assessment
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    A comprehensive assessment tool to evaluate your organization's readiness for digital transformation
+                    A comprehensive assessment tool to evaluate your organization's readiness for digital transformation 
                     and identify key areas for improvement.
                   </p>
                   <Button variant="outline" size="sm" asChild>
@@ -291,7 +288,7 @@ export default function ResourcesPage() {
             recommendations and strategies.
           </p>
           <Button size="lg" variant="secondary" asChild>
-            <Link href="/demo">
+            <Link href="/contact">
               Schedule a Consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
