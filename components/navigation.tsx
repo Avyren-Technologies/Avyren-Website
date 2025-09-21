@@ -3,9 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { SearchBar } from "@/components/ui/search"
-import { Menu, X, ChevronDown } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { SearchBar } from "@/components/search"
+import { ModeToggle } from "@/components/ui/mode-toggle"
+import { HoverDropdown } from "@/components/hover-dropdown"
+import { Menu, X } from "lucide-react"
+import { DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,48 +29,81 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
-                  Products <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products">All Products</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/avy-tracker">Avy Tracker</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/ecommerce-booking">E-commerce & Booking</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/custom-solutions">Custom Solutions</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              <Link
-                href="/about"
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              <HoverDropdown
+                trigger={
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                    Products
+                  </button>
+                }
               >
-                About
-              </Link>
+                <DropdownMenuItem asChild>
+                  <Link href="/products">All Products</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/products/avy-tracker">Avy Tracker</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/products/ecommerce-booking">E-commerce & Booking</Link>
+                </DropdownMenuItem>
+              </HoverDropdown>
 
-              <Link
-                href="/resources"
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              <HoverDropdown
+                trigger={
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                    Pricing
+                  </button>
+                }
               >
-                Resources
-              </Link>
+                <DropdownMenuItem asChild>
+                  <Link href="/products/avy-tracker/pricing">Avy Tracker Pricing</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/products/ecommerce-booking/pricing">E-commerce Pricing</Link>
+                </DropdownMenuItem>
+              </HoverDropdown>
+
+              <HoverDropdown
+                trigger={
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                    Features
+                  </button>
+                }
+              >
+                <DropdownMenuItem asChild>
+                  <Link href="/products/avy-tracker#features">Avy Tracker Features</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/products/ecommerce-booking#features">E-commerce Features</Link>
+                </DropdownMenuItem>
+              </HoverDropdown>
+
+              <HoverDropdown
+                trigger={
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                    Company
+                  </button>
+                }
+              >
+                <DropdownMenuItem asChild>
+                  <Link href="/about">About Us</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/about#team">Our Team</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/about#clients">Our Clients</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/careers">Careers</Link>
+                </DropdownMenuItem>
+              </HoverDropdown>
             </div>
           </div>
 
-          {/* Search and CTA Buttons */}
+          {/* Search, Theme Toggle and CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <SearchBar />
-            <Button variant="outline" asChild>
-              <Link href="/demo">Book a Demo</Link>
-            </Button>
+            <ModeToggle />
             <Button asChild>
               <Link href="/contact">Get Started</Link>
             </Button>
@@ -94,25 +129,68 @@ export function Navigation() {
                 Products
               </Link>
               <Link
+                href="/products/avy-tracker/pricing"
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Avy Tracker Pricing
+              </Link>
+              <Link
+                href="/products/ecommerce-booking/pricing"
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                E-commerce Pricing
+              </Link>
+              <Link
+                href="/products/avy-tracker#features"
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Avy Tracker Features
+              </Link>
+              <Link
+                href="/products/ecommerce-booking#features"
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                E-commerce Features
+              </Link>
+              <Link
                 href="/about"
                 className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                About
+                About Us
               </Link>
               <Link
-                href="/resources"
+                href="/about#team"
                 className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Resources
+                Our Team
+              </Link>
+              <Link
+                href="/about#clients"
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Our Clients
+              </Link>
+              <Link
+                href="/careers"
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Careers
               </Link>
               <div className="pt-4 pb-3 border-t border-border">
                 <div className="flex flex-col space-y-2">
                   <SearchBar className="mb-2" />
-                  <Button variant="outline" asChild>
-                    <Link href="/demo">Book a Demo</Link>
-                  </Button>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Theme</span>
+                    <ModeToggle />
+                  </div>
                   <Button asChild>
                     <Link href="/contact">Get Started</Link>
                   </Button>

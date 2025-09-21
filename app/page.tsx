@@ -3,6 +3,8 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Logos3 } from "@/components/ui/logos3"
+import { IndustriesCarousel } from "@/components/ui/industries-carousel"
 import { ArrowRight, CheckCircle, Zap, Shield, TrendingUp, Users, Clock, Star } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -15,10 +17,10 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.muted.foreground/0.1)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.muted.foreground/0.1)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-6">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6">
               Smart Digital Solutions
@@ -31,23 +33,42 @@ export default function HomePage() {
               <br />
               Powering Smart Digital Solutions
             </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
-              Affordable, scalable, and real-time digital platforms designed to drive transformation across industries. 
-              From workforce management to e-commerce solutions, we deliver end-to-end SDLC support.
+            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
+              We bring innovation, efficiency, and intelligence together to transform businesses with modern software solutions. 
+              From HRMS portals like Avy Tracker to E-Commerce and Service Booking Platforms, we create products that solve real business challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="text-lg px-8 py-6">
+              <Button 
+                size="lg" 
+                asChild 
+                className="group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 text-lg px-8 py-6"
+              >
                 <Link href="/contact">
-                  Request Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center">
+                    Request Demo 
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6">
-                <Link href="/products">Explore Products</Link>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                asChild 
+                className="group relative overflow-hidden border-2 border-primary/20 hover:border-primary/40 bg-background/50 backdrop-blur-sm hover:bg-primary/5 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-md hover:shadow-lg text-lg px-8 py-6"
+              >
+                <Link href="/products">
+                  <span className="relative z-10">Explore Products</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Trusted By Companies */}
+      <Logos3 heading="Trusted by companies worldwide" />
 
       {/* Value Proposition Section */}
       <section className="py-24 bg-muted/20">
@@ -57,7 +78,7 @@ export default function HomePage() {
               Why Choose Avyren Technologies?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We deliver smart, affordable, and scalable digital solutions that transform how businesses operate.
+              We specialize in building mobile and web applications that make business operations simpler, faster, and more transparent.
             </p>
           </div>
 
@@ -69,7 +90,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle className="font-heading text-lg mb-2">Affordable Solutions</CardTitle>
                 <CardDescription className="text-sm">
-                  Cost-effective digital platforms designed for businesses of all sizes, from startups to enterprises.
+                  Digital solutions that empower even small and medium businesses to embrace technology without huge costs.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -79,9 +100,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="h-8 w-8 text-accent" />
                 </div>
-                <CardTitle className="font-heading text-lg mb-2">Scalable Platforms</CardTitle>
+                <CardTitle className="font-heading text-lg mb-2">Transparency & Productivity</CardTitle>
                 <CardDescription className="text-sm">
-                  Future-ready solutions that grow with your business, supporting expansion across industries.
+                  Our platforms ensure real-time insights and data-driven decision-making for enhanced productivity.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -91,9 +112,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="font-heading text-lg mb-2">Real-Time Analytics</CardTitle>
+                <CardTitle className="font-heading text-lg mb-2">Digital Transformation</CardTitle>
                 <CardDescription className="text-sm">
-                  Live data insights and reporting to help you make informed decisions instantly.
+                  Helping businesses across industries simplify operations and become smarter and more connected.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -103,9 +124,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="font-heading text-lg mb-2">End-to-End SDLC</CardTitle>
+                <CardTitle className="font-heading text-lg mb-2">Smart & Reliable</CardTitle>
                 <CardDescription className="text-sm">
-                  Complete software development lifecycle support from concept to deployment and maintenance.
+                  Technology-driven solutions that are smart, reliable, and user-friendly for businesses of all sizes.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -118,10 +139,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-balance mb-4">
-              Our Featured Products
+              Our Products
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready-to-deploy solutions designed for modern businesses across various industries.
+              We currently offer two flagship applications designed to simplify business operations and deliver real-time efficiency.
             </p>
           </div>
 
@@ -139,7 +160,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  AI-powered attendance and HR management system with face recognition, GPS tracking, and comprehensive workforce analytics.
+                  Smart workforce management and HRMS solution for attendance, task management, and payroll. Make employee and task management simpler, transparent, and real-time.
                 </CardDescription>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center text-sm">
@@ -159,9 +180,16 @@ export default function HomePage() {
                     Real-time Payroll & HR Reports
                   </li>
                 </ul>
-                <Button asChild className="w-full">
+                <Button 
+                  asChild 
+                  className="w-full group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
                   <Link href="/products/avy-tracker">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    <span className="relative z-10 flex items-center justify-center">
+                      Learn More 
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
               </CardHeader>
@@ -180,7 +208,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  Comprehensive platform combining retail e-commerce with service booking capabilities, featuring customer exclusivity and real-time tracking.
+                  A loyalty-focused platform for product sales and service bookings with real-time tracking and customer exclusivity. Digitize local businesses while ensuring customer loyalty remains intact.
                 </CardDescription>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center text-sm">
@@ -200,9 +228,17 @@ export default function HomePage() {
                     Seller Dashboards & Analytics
                   </li>
                 </ul>
-                <Button variant="outline" asChild className="w-full bg-transparent">
+                <Button 
+                  variant="outline" 
+                  asChild 
+                  className="w-full group relative overflow-hidden border-2 border-accent/20 hover:border-accent/40 bg-background/50 backdrop-blur-sm hover:bg-accent/5 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                >
                   <Link href="/products/ecommerce-booking">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    <span className="relative z-10 flex items-center justify-center">
+                      Learn More 
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
               </CardHeader>
@@ -212,36 +248,7 @@ export default function HomePage() {
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-24 bg-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-heading font-bold text-3xl lg:text-4xl text-balance mb-4">
-              Industries We Serve
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Trusted by businesses across various sectors for digital transformation solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[
-              "Construction",
-              "Healthcare",
-              "Retail",
-              "Education",
-              "Manufacturing",
-              "Services"
-            ].map((industry, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary/20 rounded"></div>
-                </div>
-                <h3 className="font-heading font-semibold text-sm">{industry}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <IndustriesCarousel />
 
       {/* CTA Section */}
       <section className="py-24 bg-primary text-primary-foreground">
@@ -250,22 +257,35 @@ export default function HomePage() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl opacity-90 mb-8">
-            Join hundreds of businesses that trust Avyren Technologies for their digital transformation journey.
+            Your vision, our technology – together, we create success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              asChild
+              className="group relative overflow-hidden bg-white text-primary hover:bg-white/90 border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+            >
               <Link href="/contact">
-                Request Demo <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="relative z-10 flex items-center">
+                  Request Demo 
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="group relative overflow-hidden border-2 border-white/30 hover:border-white/50 bg-transparent hover:bg-white/10 text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-md hover:shadow-lg backdrop-blur-sm"
               asChild
             >
               <Link href="/products">
-                Explore Products <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="relative z-10 flex items-center">
+                  Explore Products 
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             </Button>
           </div>

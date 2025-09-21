@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Work_Sans, Open_Sans } from "next/font/google"
 import { Suspense } from "react"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const workSans = Work_Sans({
@@ -19,9 +20,9 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Avyren Technologies - Powering Smart Digital Solutions",
   description:
-    "Affordable, scalable, and intelligent digital platforms for modern businesses. From workforce management to e-commerce solutions.",
+    "We bring innovation, efficiency, and intelligence together to transform businesses with modern software solutions. From HRMS portals like Avy Tracker to E-Commerce and Service Booking Platforms.",
   keywords:
-    "workforce management software, HRMS attendance app, e-commerce platform, service booking platform, affordable software solutions India, digital transformation",
+    "Avy Tracker, workforce management software, HRMS attendance app, e-commerce platform, service booking platform, affordable software solutions India, digital transformation, Avyren Technologies",
   authors: [{ name: "Avyren Technologies" }],
   creator: "Avyren Technologies",
   publisher: "Avyren Technologies",
@@ -32,14 +33,14 @@ export const metadata: Metadata = {
     url: "https://avyrentechnologies.com",
     title: "Avyren Technologies - Powering Smart Digital Solutions",
     description:
-      "Affordable, scalable, and intelligent digital platforms for modern businesses. From workforce management to e-commerce solutions.",
+      "We bring innovation, efficiency, and intelligence together to transform businesses with modern software solutions. From HRMS portals like Avy Tracker to E-Commerce and Service Booking Platforms.",
     siteName: "Avyren Technologies",
   },
   twitter: {
     card: "summary_large_image",
     title: "Avyren Technologies - Powering Smart Digital Solutions",
     description:
-      "Affordable, scalable, and intelligent digital platforms for modern businesses. From workforce management to e-commerce solutions.",
+      "We bring innovation, efficiency, and intelligence together to transform businesses with modern software solutions. From HRMS portals like Avy Tracker to E-Commerce and Service Booking Platforms.",
     creator: "@avyrentech",
   },
   generator: 'v0.app'
@@ -56,9 +57,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`font-sans ${workSans.variable} ${openSans.variable} antialiased`}>
-        <Suspense fallback={null}>{children}</Suspense>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange={false}
+          storageKey="avyren-theme"
+        >
+          <Suspense fallback={null}>{children}</Suspense>
+        </ThemeProvider>
       </body>
     </html>
   )

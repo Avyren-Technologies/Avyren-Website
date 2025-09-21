@@ -12,18 +12,21 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-card/50 to-muted/30 py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-24 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.muted.foreground/0.1)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.muted.foreground/0.1)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6">
               About Avyren Technologies
             </Badge>
             <h1 className="font-heading font-bold text-4xl lg:text-6xl text-balance mb-6">
-              Powering Smart Digital Solutions for <span className="text-primary">Every Business</span>
+              About <span className="text-primary">Avyren Technologies</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              We are a technology company dedicated to delivering affordable, scalable, and intelligent digital platforms 
-              that drive transformation across industries.
+              We are a technology-driven software development company passionate about delivering smart, reliable, and user-friendly 
+              solutions to help businesses stay ahead in the digital era.
             </p>
           </div>
         </div>
@@ -36,18 +39,24 @@ export default function AboutPage() {
             <div>
               <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-8">Who We Are</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Avyren Technologies is a forward-thinking software solutions company that specializes in creating 
-                smart digital platforms for businesses across various industries. We understand that every business, 
-                regardless of size, deserves access to powerful technology solutions that can drive growth and efficiency.
+                Avyren Technologies is a technology-driven software development company passionate about delivering 
+                smart, reliable, and user-friendly solutions to help businesses stay ahead in the digital era.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Our team of experienced developers, designers, and business analysts work together to deliver 
-                end-to-end software development lifecycle support, ensuring that our clients receive not just 
-                products, but complete digital transformation solutions.
+                We combine creative thinking, technical expertise, and industry knowledge to develop tailored applications 
+                that solve real-world challenges for organizations of all sizes.
               </p>
-              <Button size="lg" asChild>
+              <Button 
+                size="lg" 
+                asChild
+                className="group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+              >
                 <Link href="/contact">
-                  Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center">
+                    Get in Touch 
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
               </Button>
             </div>
@@ -84,6 +93,9 @@ export default function AboutPage() {
                   "To become a trusted and affordable technology partner delivering smart and scalable digital 
                   platforms across industries."
                 </blockquote>
+                <p className="text-sm text-muted-foreground mt-4">
+                  This vision drives every solution we build, ensuring our products are innovative, affordable, and future-ready.
+                </p>
               </CardHeader>
             </Card>
 
@@ -99,15 +111,15 @@ export default function AboutPage() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">Deliver affordable applications that democratize access to advanced technology</span>
+                    <span className="text-muted-foreground">Develop Affordable & Accessible Applications: Digital solutions that empower even small and medium businesses to embrace technology without huge costs</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">Ensure transparency and productivity in all our solutions and processes</span>
+                    <span className="text-muted-foreground">Enhance Transparency & Productivity: Our platforms ensure real-time insights and data-driven decision-making</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">Drive digital transformation across industries with smart, scalable platforms</span>
+                    <span className="text-muted-foreground">Drive Digital Transformation: Helping businesses across industries simplify operations and become smarter and more connected</span>
                   </li>
                 </ul>
               </CardHeader>
@@ -264,19 +276,32 @@ export default function AboutPage() {
             Let's discuss how Avyren Technologies can help transform your business with smart digital solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              asChild
+              className="group relative overflow-hidden bg-white text-primary hover:bg-white/90 border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+            >
               <Link href="/contact">
-                Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="relative z-10 flex items-center">
+                  Get Started 
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="group relative overflow-hidden border-2 border-white/30 hover:border-white/50 bg-transparent hover:bg-white/10 text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-md hover:shadow-lg backdrop-blur-sm"
               asChild
             >
               <Link href="/products">
-                View Our Products <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="relative z-10 flex items-center">
+                  View Our Products 
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             </Button>
           </div>

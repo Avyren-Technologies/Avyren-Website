@@ -12,8 +12,11 @@ export default function AvyTrackerPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-card/50 to-muted/30 py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-12 lg:py-12">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.muted.foreground/0.1)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.muted.foreground/0.1)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="secondary" className="mb-6">
@@ -29,13 +32,29 @@ export default function AvyTrackerPage() {
                 and real-time analytics designed for modern businesses.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild>
+                <Button 
+                  size="lg" 
+                  asChild
+                  className="group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+                >
                   <Link href="/contact?product=avy-tracker">
-                    Request Demo <ArrowRight className="ml-2 h-5 w-5" />
+                    <span className="relative z-10 flex items-center">
+                      Request Demo 
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="#features">View Features</Link>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  asChild
+                  className="group relative overflow-hidden border-2 border-primary/20 hover:border-primary/40 bg-background/50 backdrop-blur-sm hover:bg-primary/5 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-md hover:shadow-lg"
+                >
+                  <Link href="/products/avy-tracker/pricing">
+                    <span className="relative z-10">View Pricing</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </Link>
                 </Button>
               </div>
             </div>

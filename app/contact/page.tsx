@@ -16,21 +16,31 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-card/50 to-muted/30 py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-24 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.muted.foreground/0.1)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.muted.foreground/0.1)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6">
               Get in Touch
             </Badge>
             <h1 className="font-heading font-bold text-4xl lg:text-6xl text-balance mb-6">
-              Let's Start Your <span className="text-primary">Digital Transformation</span> Journey
+              Let's Start Your <span className="text-primary">Digital Journey</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              Ready to transform your business with smart digital solutions? Our team of experts is here to help you 
-              navigate your journey and achieve your goals.
+              Ready to transform your business with smart digital solutions? We'd love to hear from you and discuss 
+              how we can help your business grow with our products.
             </p>
-            <Button size="lg" asChild>
-              <Link href="#contact-form">Get Started Today</Link>
+            <Button 
+              size="lg" 
+              asChild
+              className="group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+            >
+              <Link href="#contact-form">
+                <span className="relative z-10">Get Started Today</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </Link>
             </Button>
           </div>
         </div>
@@ -56,9 +66,17 @@ export default function ContactPage() {
                 <CardDescription className="text-base leading-relaxed mb-6">
                   Have questions about our products or want to learn more about how we can help your business?
                 </CardDescription>
-                <Button variant="outline" asChild className="w-fit bg-transparent">
+                <Button 
+                  variant="outline" 
+                  asChild 
+                  className="w-fit group relative overflow-hidden border-2 border-primary/20 hover:border-primary/40 bg-background/50 backdrop-blur-sm hover:bg-primary/5 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                >
                   <Link href="#contact-form">
-                    Send Message <ArrowRight className="ml-2 h-4 w-4" />
+                    <span className="relative z-10 flex items-center">
+                      Send Message 
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
               </CardHeader>
@@ -73,9 +91,17 @@ export default function ContactPage() {
                 <CardDescription className="text-base leading-relaxed mb-6">
                   See our products in action and discover how they can transform your business operations.
                 </CardDescription>
-                <Button variant="outline" asChild className="w-fit bg-transparent">
+                <Button 
+                  variant="outline" 
+                  asChild 
+                  className="w-fit group relative overflow-hidden border-2 border-accent/20 hover:border-accent/40 bg-background/50 backdrop-blur-sm hover:bg-accent/5 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                >
                   <Link href="#contact-form">
-                    Book Demo <ArrowRight className="ml-2 h-4 w-4" />
+                    <span className="relative z-10 flex items-center">
+                      Book Demo 
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
               </CardHeader>
@@ -86,13 +112,21 @@ export default function ContactPage() {
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Phone className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="font-heading text-xl mb-4">Custom Solutions</CardTitle>
+                <CardTitle className="font-heading text-xl mb-4">Product Support</CardTitle>
                 <CardDescription className="text-base leading-relaxed mb-6">
-                  Need a custom solution? Connect with our development team for tailored software development.
+                  Need help with our products? Connect with our support team for assistance and guidance.
                 </CardDescription>
-                <Button variant="outline" asChild className="w-fit bg-transparent">
+                <Button 
+                  variant="outline" 
+                  asChild 
+                  className="w-fit group relative overflow-hidden border-2 border-secondary/20 hover:border-secondary/40 bg-background/50 backdrop-blur-sm hover:bg-secondary/5 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                >
                   <Link href="#contact-form">
-                    Get Quote <ArrowRight className="ml-2 h-4 w-4" />
+                    <span className="relative z-10 flex items-center">
+                      Get Support 
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
               </CardHeader>
@@ -170,7 +204,6 @@ export default function ContactPage() {
                       <SelectContent>
                         <SelectItem value="avy-tracker">Avy Tracker</SelectItem>
                         <SelectItem value="ecommerce-booking">E-commerce & Service Booking</SelectItem>
-                        <SelectItem value="custom-solutions">Custom Solutions</SelectItem>
                         <SelectItem value="consultation">General Consultation</SelectItem>
                       </SelectContent>
                     </Select>
@@ -293,13 +326,6 @@ export default function ContactPage() {
                     E-commerce Platform Demo
                   </Link>
                   <Link
-                    href="/products/custom-solutions"
-                    className="flex items-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ArrowRight className="h-4 w-4 mr-2" />
-                    Custom Development
-                  </Link>
-                  <Link
                     href="/about"
                     className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                   >
@@ -333,10 +359,10 @@ export default function ContactPage() {
             </Card>
 
             <Card className="p-8">
-              <h3 className="font-heading font-semibold text-xl mb-4">Do you offer custom solutions?</h3>
+              <h3 className="font-heading font-semibold text-xl mb-4">What products do you offer?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Yes, we specialize in creating custom digital solutions tailored to your specific business needs. 
-                Our team provides complete SDLC support from requirement analysis to deployment and ongoing maintenance.
+                We currently offer two flagship applications: Avy Tracker for workforce management and HRMS, 
+                and our E-Commerce & Service Booking Platform for retail and service businesses.
               </p>
             </Card>
 

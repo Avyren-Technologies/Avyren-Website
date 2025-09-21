@@ -19,8 +19,8 @@ export function Footer() {
               <span className="font-heading font-bold text-xl text-white">Avyren Technologies</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Powering Smart Digital Solutions for businesses across industries with affordable, 
-              scalable, and intelligent platforms.
+              We bring innovation, efficiency, and intelligence together to transform businesses with modern software solutions. 
+              From HRMS portals to E-Commerce and Service Booking Platforms.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
@@ -53,11 +53,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/products/custom-solutions" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  Custom Solutions
-                </Link>
-              </li>
-              <li>
                 <Link href="/products" className="text-gray-300 hover:text-white text-sm transition-colors">
                   All Products
                 </Link>
@@ -79,44 +74,26 @@ export function Footer() {
                   Contact Us
                 </Link>
               </li>
-              <li>
-                <Link href="/careers" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/news" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  News & Updates
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Resources & Support */}
+          {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-heading font-semibold text-white text-lg">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/resources" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  All Resources
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/case-studies" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/support" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  Support Center
-                </Link>
-              </li>
-            </ul>
+            <h3 className="font-heading font-semibold text-white text-lg">Contact Info</h3>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-accent" />
+                <span className="text-gray-300 text-sm">+91 98765 43210</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-accent" />
+                <span className="text-gray-300 text-sm">info@avyrentechnologies.com</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4 text-accent" />
+                <span className="text-gray-300 text-sm">India</span>
+              </div>
+            </div>
           </div>
         </div>
 
