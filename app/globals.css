@@ -1,0 +1,362 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color scheme for Tecosoft Digital Solutions */
+  --background: oklch(1 0 0); /* White */
+  --foreground: oklch(0.35 0.02 258); /* Dark Slate #475569 */
+  --card: oklch(0.98 0.02 195); /* Light Cyan #ecfeff */
+  --card-foreground: oklch(0.25 0.08 195); /* Cyan-800 #164e63 */
+  --popover: oklch(1 0 0); /* White */
+  --popover-foreground: oklch(0.35 0.02 258); /* Dark Slate */
+  --primary: oklch(0.25 0.08 195); /* Cyan-800 #164e63 */
+  --primary-foreground: oklch(1 0 0); /* White */
+  --secondary: oklch(0.75 0.15 120); /* Vibrant Green #84cc16 */
+  --secondary-foreground: oklch(0.25 0.08 195); /* Cyan-800 */
+  --muted: oklch(0.97 0.01 120); /* Light Green #f0fdf4 */
+  --muted-foreground: oklch(0.4 0.02 258); /* #374151 */
+  --accent: oklch(0.75 0.15 120); /* Vibrant Green #84cc16 */
+  --accent-foreground: oklch(0.25 0.08 195); /* Cyan-800 */
+  --destructive: oklch(0.55 0.2 25); /* Orange #ea580c */
+  --destructive-foreground: oklch(1 0 0); /* White */
+  --border: oklch(0.9 0.01 258); /* Light Gray #e2e8f0 */
+  --input: oklch(0.98 0.005 258); /* Very Light Gray #f9fafb */
+  --ring: oklch(0.25 0.08 195 / 0.5); /* Cyan-800 with opacity */
+  --chart-1: oklch(0.45 0.12 140); /* Green #15803d */
+  --chart-2: oklch(0.55 0.2 25); /* Orange #ea580c */
+  --chart-3: oklch(0.75 0.15 120); /* Vibrant Green #84cc16 */
+  --chart-4: oklch(0.25 0.08 195); /* Cyan-800 #164e63 */
+  --chart-5: oklch(0.35 0.02 258); /* Dark Slate #475569 */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0.02 195); /* Light Cyan */
+  --sidebar-foreground: oklch(0.25 0.08 195); /* Cyan-800 */
+  --sidebar-primary: oklch(1 0 0); /* White */
+  --sidebar-primary-foreground: oklch(0.35 0.02 258); /* Dark Slate */
+  --sidebar-accent: oklch(0.75 0.15 120); /* Vibrant Green */
+  --sidebar-accent-foreground: oklch(0.25 0.08 195); /* Cyan-800 */
+  --sidebar-border: oklch(0.9 0.01 258); /* Light Gray */
+  --sidebar-ring: oklch(0.25 0.08 195 / 0.5); /* Cyan-800 with opacity */
+  --font-open-sans: "Open Sans", sans-serif;
+  --font-work-sans: "Work Sans", sans-serif;
+}
+
+.dark {
+  /* Updated dark mode colors for Tecosoft theme */
+  --background: oklch(0.1 0.02 258); /* Very Dark Slate */
+  --foreground: oklch(0.95 0.01 195); /* Light Cyan */
+  --card: oklch(0.15 0.02 258); /* Dark Slate */
+  --card-foreground: oklch(0.95 0.01 195); /* Light Cyan */
+  --popover: oklch(0.1 0.02 258); /* Very Dark Slate */
+  --popover-foreground: oklch(0.95 0.01 195); /* Light Cyan */
+  --primary: oklch(0.95 0.01 195); /* Light Cyan */
+  --primary-foreground: oklch(0.1 0.02 258); /* Very Dark Slate */
+  --secondary: oklch(0.75 0.15 120); /* Vibrant Green */
+  --secondary-foreground: oklch(0.1 0.02 258); /* Very Dark Slate */
+  --muted: oklch(0.2 0.02 258); /* Dark Slate */
+  --muted-foreground: oklch(0.7 0.01 195); /* Light Gray */
+  --accent: oklch(0.75 0.15 120); /* Vibrant Green */
+  --accent-foreground: oklch(0.1 0.02 258); /* Very Dark Slate */
+  --destructive: oklch(0.55 0.2 25); /* Orange */
+  --destructive-foreground: oklch(0.95 0.01 195); /* Light Cyan */
+  --border: oklch(0.2 0.02 258); /* Dark Slate */
+  --input: oklch(0.15 0.02 258); /* Darker Slate */
+  --ring: oklch(0.7 0.01 195 / 0.5); /* Light Cyan with opacity */
+  --chart-1: oklch(0.6 0.15 140); /* Lighter Green */
+  --chart-2: oklch(0.65 0.2 25); /* Lighter Orange */
+  --chart-3: oklch(0.75 0.15 120); /* Vibrant Green */
+  --chart-4: oklch(0.7 0.08 195); /* Lighter Cyan */
+  --chart-5: oklch(0.6 0.02 258); /* Lighter Slate */
+  --sidebar: oklch(0.15 0.02 258); /* Dark Slate */
+  --sidebar-foreground: oklch(0.95 0.01 195); /* Light Cyan */
+  --sidebar-primary: oklch(0.75 0.15 120); /* Vibrant Green */
+  --sidebar-primary-foreground: oklch(0.1 0.02 258); /* Very Dark Slate */
+  --sidebar-accent: oklch(0.2 0.02 258); /* Darker Slate */
+  --sidebar-accent-foreground: oklch(0.95 0.01 195); /* Light Cyan */
+  --sidebar-border: oklch(0.2 0.02 258); /* Dark Slate */
+  --sidebar-ring: oklch(0.7 0.01 195 / 0.5); /* Light Cyan with opacity */
+}
+
+@theme inline {
+  /* Updated font variables for Tecosoft typography */
+  --font-sans: var(--font-open-sans);
+  --font-heading: var(--font-work-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Improved text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Prevent horizontal scroll */
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Ensure all containers respect max width */
+  * {
+    max-width: 100%;
+  }
+
+  /* Added heading font utility class */
+  .font-heading {
+    font-family: var(--font-work-sans);
+  }
+
+  /* Improved focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+
+  /* Better button and interactive element styles */
+  button,
+  [role="button"] {
+    @apply transition-colors duration-200;
+  }
+
+  /* Improved link styles */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Better form element styles */
+  input,
+  textarea,
+  select {
+    @apply transition-colors duration-200;
+  }
+
+  /* Responsive image improvements */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Better scrollbar styling for webkit browsers */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+/* Additional responsive utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Custom container sizes for better responsive design */
+  .container-xs {
+    @apply max-w-xs mx-auto px-4;
+  }
+
+  .container-sm {
+    @apply max-w-sm mx-auto px-4;
+  }
+
+  .container-md {
+    @apply max-w-md mx-auto px-4;
+  }
+
+  .container-lg {
+    @apply max-w-lg mx-auto px-4;
+  }
+
+  .container-xl {
+    @apply max-w-xl mx-auto px-4;
+  }
+
+  .container-2xl {
+    @apply max-w-2xl mx-auto px-4;
+  }
+
+  .container-3xl {
+    @apply max-w-3xl mx-auto px-4;
+  }
+
+  .container-4xl {
+    @apply max-w-4xl mx-auto px-4;
+  }
+
+  .container-5xl {
+    @apply max-w-5xl mx-auto px-4;
+  }
+
+  .container-6xl {
+    @apply max-w-6xl mx-auto px-4;
+  }
+
+  .container-7xl {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.5s ease-out;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Marquee animations */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+/* Print styles */
+@media print {
+  * {
+    @apply text-black bg-white;
+  }
+
+  .no-print {
+    @apply hidden;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: oklch(0.5 0 0);
+    --ring: oklch(0.2 0 0);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
